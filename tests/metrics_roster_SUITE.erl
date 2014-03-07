@@ -273,5 +273,5 @@ add_sample_contact(Alice, Bob, Groups, Name) ->
 
 remove_roster(Config, UserSpec) ->
     [Username, Server, _Pass] = escalus_users:get_usp(Config, UserSpec),
-    rpc:call(ejabberd@localhost, mod_roster_odbc, remove_user, [Username, Server]),
-    rpc:call(ejabberd@localhost, mod_roster, remove_user, [Username, Server]).
+    rpc:call(mongooseim@localhost, mod_roster_odbc, remove_user, [Username, Server]),
+    rpc:call(mongooseim@localhost, mod_roster, remove_user, [Username, Server]).
